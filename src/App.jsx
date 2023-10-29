@@ -1,10 +1,15 @@
-import { Header, Hero } from "./sections";
+import { Calculate, Features, Header, Hero, Stats, Trade, Why } from "./sections";
 import Aos from "aos";
 import 'aos/dist/aos.css'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { NavMobile } from "./components";
+
+
 
 
 const App = () => {
+  const [showNav, setShowNav] = useState(false)
+
 
   useEffect(() => {
     Aos.init({
@@ -16,8 +21,18 @@ const App = () => {
 
   return(
     <div className="overflow-hidden">
+      <Header setShowNav={setShowNav} />
       <Hero />
-      <Header />
+
+      <div className={`${showNav ? 'right-0' : '-right-full'}
+      fixed z-10 top-0 h-full transition-all  duration-200`}>
+          <NavMobile setShowNav={setShowNav} />
+        </div>
+        <Stats />
+        <Why />
+        <Calculate />
+        <Trade />
+        <Features />
     </div>
   )
 };
