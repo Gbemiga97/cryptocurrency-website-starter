@@ -1,8 +1,8 @@
-import { Calculate, Features, Header, Hero, Stats, Trade, Why } from "./sections";
+import { Calculate, Features, Header, Hero, NewsLetter, Stats, Trade, Why } from "./sections";
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect, useState } from "react";
-import { NavMobile } from "./components";
+import { Footer, NavMobile } from "./components";
 
 
 
@@ -33,6 +33,8 @@ const App = () => {
         <Calculate />
         <Trade />
         <Features />
+        <NewsLetter />
+        <Footer />
     </div>
   )
 };
